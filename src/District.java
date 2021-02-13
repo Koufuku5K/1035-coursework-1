@@ -12,11 +12,6 @@ public class District {
         incidents = new ArrayList<>();
     }
 
-    public District(List<Incident> incidents, String name) {
-        this.incidents = incidents;
-        this.name = name;
-    }
-
     public String getName() {
         return name;
     }
@@ -33,10 +28,6 @@ public class District {
         this.incidents = incidents;
     }
 
-    public boolean addIncident(Incident i) {
-        return incidents.add(i);
-    }
-
     @Override
     public String toString() {
         return "District{" +
@@ -44,7 +35,12 @@ public class District {
                 '}';
     }
 
+    public boolean addIncident(Incident i) {
+        return incidents.add(i);
+    }
+
     public static void assignDistrict() {
+
         Scanner s = new Scanner(System.in);
 
         System.out.println("Enter District Name: ");
@@ -52,37 +48,35 @@ public class District {
 
         District d = new District(name);
 
-        List<Incident> incident = new ArrayList<>();
+        Incident i = new Incident(4200, "414152", "January", "2021");
+        Incident i1 = new Incident(4521, "687633", "February", "2021");
+        Incident i2 = new Incident(2200, "876541", "January", "2021");
+        Incident i3 = new Incident(3200, "675193", "February", "2021");
 
-        for (int j = 0 ; j < 5; j++) {
+        d.addIncident(i);
+        d.addIncident(i1);
+        d.addIncident(i2);
+        d.addIncident(i3);
 
-            Scanner sc = new Scanner(System.in);
+        System.out.println("""
+                -------------------
+                Current crime list:
+                -------------------""");
+        System.out.println(d);
+        System.out.println(d.getIncident());
 
-            System.out.println("Enter total value stolen: ");
-            double value = Double.parseDouble(sc.nextLine());
+        d.addIncident(Incident.inputIncident());
 
-            System.out.println("Enter postcode: ");
-            String postcode = sc.nextLine();
-
-            System.out.println("Enter month: ");
-            String month = sc.nextLine();
-
-            System.out.println("Enter year: ");
-            String year = sc.nextLine();
-
-            Incident i = new Incident(value, postcode, month, year);
-
-            incident.add(i);
-
-            System.out.println(incident);
+        System.out.println(d.highestValue());
 
         }
-
-    }
 
     public Incident highestValue() {
         double lastValue = 0.0;
         Incident temp = null;
+        District d = new District(name);
+        System.out.println("\nThe incident with the highest value stolen is:");
+        System.out.println(d);
         for (Incident i : incidents) {
             if (i.getValue() > lastValue) {
                 lastValue = i.getValue();
@@ -91,5 +85,5 @@ public class District {
         }
         return temp;
     }
-
 }
+
