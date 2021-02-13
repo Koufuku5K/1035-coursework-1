@@ -16,7 +16,9 @@ public class ReportingIO {
         while (flag) {
 
             System.out.println("""
+                ------------------------------
                 Do you want to report a crime?
+                ------------------------------
                 1 - Report a crime
                 2 - Exit
                 """);
