@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Incident {
 
     private double value;
@@ -52,5 +56,24 @@ public class Incident {
                 ", month='" + month + '\'' +
                 ", year='" + year + '\'' +
                 '}';
+    }
+
+    public static Incident inputIncident() {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("\nEnter total value stolen: ");
+        double value = Double.parseDouble(sc.nextLine());
+
+        System.out.println("Enter postcode: ");
+        String postcode = sc.nextLine();
+
+        System.out.println("Enter month: ");
+        String month = sc.nextLine();
+
+        System.out.println("Enter year: ");
+        String year = sc.nextLine();
+
+        return new Incident(value, postcode, month, year);
     }
 }
