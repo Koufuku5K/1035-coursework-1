@@ -76,9 +76,13 @@ public class District {
 
         System.out.println(d.averageValue());
 
+        System.out.println(d.greaterThan());
+
         System.out.println(d1.highestValue());
 
         System.out.println(d1.averageValue());
+
+        System.out.println(d1.greaterThan());
 
     }
 
@@ -100,14 +104,31 @@ public class District {
     public int averageValue() {
         double sum = 0.0;
         double average = 0.0;
+        System.out.println("\nEnter the year to find the average value:");
+        Scanner s = new Scanner(System.in);
+        String year = s.nextLine();
         District d = new District(name);
         System.out.println("\nThe average stolen value at " + d.getName() + " district is:");
         for (Incident i : incidents) {
-            sum = i.getValue() + i.getValue();
-            average = sum / 2;
+            if (i.getYear().equals(year)) {
+                sum += i.getValue();
+                average = sum / 2;
             }
+        }
         return (int) average;
     }
 
+    public List<Incident> greaterThan() {
+        System.out.println("Enter a value to find the incident(s) with greater value:");
+        Scanner s = new Scanner(System.in);
+        double value = s.nextDouble();
+        District d = new District(name);
+        for (Incident i : incidents) {
+            if (i.getValue() > value) {
+                System.out.println(d.getIncident());
+            }
+        }
+        return(d.getIncident());
+    }
 }
 
