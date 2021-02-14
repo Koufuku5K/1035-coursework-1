@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Incident {
@@ -62,7 +60,7 @@ public class Incident {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("\nEnter total value stolen: ");
+        System.out.println("Enter total value stolen: ");
         double value = Double.parseDouble(sc.nextLine());
 
         System.out.println("Enter postcode: ");
