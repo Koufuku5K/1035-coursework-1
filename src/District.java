@@ -2,6 +2,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
 
+/**
+ * This class is an abstract representation of a district that takes incidents as composition.
+ * The incidents are stored in arraylist. The constructor initializes the new arraylist and the
+ * district's name.
+ *
+ * @author William Moses
+ *
+ * @date 09/02/2021
+ */
+
 public class District {
 
     private String name;
@@ -25,11 +35,11 @@ public class District {
         this.name = name;
     }
 
-    public List<Incident> getIncident() {
+    public List<Incident> getIncidents() {
         return incidents;
     }
 
-    public void setIncident(List<Incident> incidents) {
+    public void setIncidents(List<Incident> incidents) {
         this.incidents = incidents;
     }
 
@@ -40,6 +50,11 @@ public class District {
                 '}';
     }
 
+    /**
+     * The purpose of this method is to add incidents to the arraylist in the district class.
+     * @param i is the incident to be added to the district class.
+     * @return boolean to see if it has been added.
+     */
     public boolean addIncident(Incident i) {
         return incidents.add(i);
     }
@@ -76,16 +91,21 @@ public class District {
 
         System.out.println(d.averageValue());
 
-        System.out.println(d.greaterThan());
+        d.greaterThan();
 
         System.out.println(d1.highestValue());
 
         System.out.println(d1.averageValue());
 
-        System.out.println(d1.greaterThan());
+        d1.greaterThan();
 
     }
 
+    /**
+     * This purpose of this method is to return an incident that has the highest value in the district.
+     *
+     * @return Incident with the highest value.
+     */
     public Incident highestValue() {
         double lastValue = 0.0;
         Incident temp = null;
@@ -101,6 +121,11 @@ public class District {
         return temp;
     }
 
+    /**
+     * The purpose of this method is to return the average value stolen in a district.
+     *
+     * @return Integer of the average value in a district.
+     */
     public int averageValue() {
         double sum = 0.0;
         double average = 0.0;
@@ -112,23 +137,27 @@ public class District {
         for (Incident i : incidents) {
             if (i.getYear().equals(year)) {
                 sum += i.getValue();
-                average = sum / 2;
+                average = sum / incidents.size();
             }
         }
         return (int) average;
     }
 
-    public List<Incident> greaterThan() {
+    /**
+     * The purpose of this method is to compare the value in a district with user input. If the
+     * value of an incident is larger than the user input, then it will be printed out. If not, then
+     * "None" will be printed out.
+     */
+    public void greaterThan() {
         System.out.println("Enter a value to find the incident(s) with greater value:");
         Scanner s = new Scanner(System.in);
         double value = s.nextDouble();
-        District d = new District(name);
+        System.out.println("The value larger than " + value + " is:");
         for (Incident i : incidents) {
             if (i.getValue() > value) {
-                System.out.println(d.getIncident());
+                System.out.println(i.getValue());
             }
         }
-        return(d.getIncident());
     }
 }
 

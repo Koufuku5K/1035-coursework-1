@@ -1,5 +1,14 @@
 import java.util.Scanner;
 
+/**
+ * This class is an abstract representation of incidents that happened in a district.
+ * It has value, postcode, month and year as fields and constructor initializes it.
+ *
+ * @author William Moses
+ *
+ * @date 9/02/2021
+ */
+
 public class Incident {
 
     private double value;
@@ -37,7 +46,7 @@ public class Incident {
     public void setMonth(String month) {
         this.month = month;
     }
-
+    
     public String getYear() {
         return year;
     }
@@ -56,12 +65,20 @@ public class Incident {
                 '}';
     }
 
+    /**
+     * The purpose of this method is to ask the user to input the information needed for the incidents.
+     *
+     * @return The incident inputted.
+     */
     public static Incident inputIncident() {
 
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter total value stolen: ");
         double value = Double.parseDouble(sc.nextLine());
+        if (value < 0) {
+            throw new IllegalArgumentException("Value must be positive");
+        }
 
         System.out.println("Enter postcode: ");
         String postcode = sc.nextLine();

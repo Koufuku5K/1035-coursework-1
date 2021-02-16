@@ -1,9 +1,19 @@
 import java.util.Scanner;
 
+/**
+ * This class is the main method of the program. It runs the methods from other classes.
+ *
+ * @author William Moses
+ *
+ * @date 09/02/2021
+ */
+
 public class ReportingIO {
 
     public static void main(String[] args) {
+
         new ReportingIO().menu();
+
     }
 
     private void menu() {
