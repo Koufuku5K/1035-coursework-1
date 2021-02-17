@@ -145,8 +145,7 @@ public class District {
 
     /**
      * The purpose of this method is to compare the value in a district with user input. If the
-     * value of an incident is larger than the user input, then it will be printed out. If not, then
-     * "None" will be printed out.
+     * value of an incident is larger than the user input, then it will be printed out.
      */
     public void greaterThan() {
         System.out.println("Enter a value to find the incident(s) with greater value:");

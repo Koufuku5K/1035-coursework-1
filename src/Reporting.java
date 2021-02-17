@@ -49,6 +49,9 @@ public class Reporting {
                 '}';
     }
 
+    /**
+     * The purpose of this method is to show the districts and incidents list.
+     */
     public static void runReporting() {
         List<Incident> incidents = new ArrayList<>();
 
@@ -82,6 +85,10 @@ public class Reporting {
 
     }
 
+    /**
+     * The purpose of this method is to calculate the average value of each district and compare their
+     * values. It will then print out the district that has the higher average value.
+     */
     public static void highestAverage() {
         double sum = 0.0;
         double sum1 = 0.0;
@@ -135,6 +142,9 @@ public class Reporting {
         }
     }
 
+    /**
+     * The purpose of this method is to return the incident with the highest value ever recorded.
+     */
     public static void highestEver() {
         List<Incident> incidents = new ArrayList<>();
 
