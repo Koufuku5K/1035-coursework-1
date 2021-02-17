@@ -166,6 +166,10 @@ public class Reporting {
         System.out.println(i5);
     }
 
+    /**
+     * The purpose of this method is to return the incidents with values higher than the average values of all
+     * incidents.
+     */
     public static void greater() {
         List<Incident> incidents = new ArrayList<>();
 
