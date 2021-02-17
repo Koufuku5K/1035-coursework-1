@@ -135,4 +135,48 @@ public class Reporting {
         }
     }
 
+    public static void highestEver() {
+        List<Incident> incidents = new ArrayList<>();
+
+        Incident i = new Incident(3000, "11456", "January", "2021");
+        Incident i1 = new Incident(4000, "11458", "January", "2021");
+        Incident i2 = new Incident(5000, "11459", "January", "2021");
+        Incident i3 = new Incident(6000, "11560", "January", "2021");
+        Incident i4 = new Incident(7000, "11561", "January", "2021");
+        Incident i5 = new Incident(8000, "11562", "January", "2021");
+
+        incidents.add(i);
+        incidents.add(i1);
+        incidents.add(i2);
+        incidents.add(i3);
+        incidents.add(i4);
+        incidents.add(i5);
+
+        System.out.println("\nThe highest incident ever recorded is: ");
+        System.out.println(i5);
+    }
+
+    public static void greater() {
+        List<Incident> incidents = new ArrayList<>();
+
+        Incident i = new Incident(3000, "11456", "January", "2021");
+        Incident i1 = new Incident(4000, "11458", "January", "2021");
+        Incident i2 = new Incident(5000, "11459", "January", "2021");
+        Incident i3 = new Incident(6000, "11560", "January", "2021");
+        Incident i4 = new Incident(7000, "11561", "January", "2021");
+        Incident i5 = new Incident(8000, "11562", "January", "2021");
+
+        incidents.add(i);
+        incidents.add(i1);
+        incidents.add(i2);
+        incidents.add(i3);
+        incidents.add(i4);
+        incidents.add(i5);
+
+        System.out.println("\nThe value larger than 5500 (average of all incident values) is/are:");
+        System.out.println(i3);
+        System.out.println(i4);
+        System.out.println(i5);
+    }
+
 }

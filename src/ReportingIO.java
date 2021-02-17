@@ -50,13 +50,15 @@ public class ReportingIO {
                 case 2:
                     Reporting.runReporting();
                     Reporting.highestAverage();
+                    Reporting.highestEver();
+                    Reporting.greater();
+                    continue;
                 case 3:
                     System.out.println("Quitting program.");
                     flag = false;
                     break;
                 default:
                     System.out.println("Input " + choice + " is invalid. Please enter 1 or 2.");
-
 
             }
         }
