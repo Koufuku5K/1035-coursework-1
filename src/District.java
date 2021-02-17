@@ -129,7 +129,7 @@ public class District {
     public int averageValue() {
         double sum = 0.0;
         double average = 0.0;
-        System.out.println("\nEnter the year to find the average value:");
+        System.out.println("\nEnter the year to find the average value of incidents in that year:");
         Scanner s = new Scanner(System.in);
         String year = s.nextLine();
         District d = new District(name);

@@ -30,7 +30,8 @@ public class ReportingIO {
                 Do you want to report a crime?
                 ------------------------------
                 1 - Report a crime
-                2 - Exit
+                2 - View statistics
+                3 - Exit
                 """);
 
             do {
@@ -47,6 +48,8 @@ public class ReportingIO {
                     District.assignDistrict();
                     break;
                 case 2:
+                    Reporting.runReporting();
+                case 3:
                     System.out.println("Quitting program.");
                     flag = false;
                     break;
