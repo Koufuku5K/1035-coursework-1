@@ -49,6 +49,7 @@ public class ReportingIO {
                     break;
                 case 2:
                     Reporting.runReporting();
+                    Reporting.highestAverage();
                 case 3:
                     System.out.println("Quitting program.");
                     flag = false;
