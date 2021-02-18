@@ -40,6 +40,9 @@ public class ReportingIO {
                     s.next();
                 }
                 choice = s.nextInt();
+                if (choice < 0) {
+                    throw new IllegalArgumentException("Value must be positive");
+                }
             }
             while (choice < 0);
 
