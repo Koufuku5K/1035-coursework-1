@@ -148,10 +148,10 @@ public class District {
      * value of an incident is larger than the user input, then it will be printed out.
      */
     public void greaterThan() {
-        System.out.println("Enter a value to find the incident(s) with greater value:");
+        System.out.println("\nEnter a value to find the incident(s) with greater value:");
         Scanner s = new Scanner(System.in);
         double value = s.nextDouble();
-        System.out.println("The value larger than " + value + " is:");
+        System.out.println("\nThe value larger than " + value + " is:");
         for (Incident i : incidents) {
             if (i.getValue() > value) {
                 System.out.println(i.getValue());
